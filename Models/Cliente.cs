@@ -7,7 +7,7 @@ namespace Padaria03.Models
     {
         [Key]
         public  int IdCliente { get; set; }
-
+        //validação nome, cpf e email
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório")]
         [MaxLength(60, ErrorMessage = "O campo {0} deve ter no máximo {1} caracteres")]
         public string Nome { get; set; }
