@@ -1,20 +1,8 @@
 # Padaria03
  Solução do desafio 2 do estudo de caso da padaria
 
-*Algumas informações*
 
-Desenvolvemos essa aplicação seguindo os padrões MVC e implementamos uma validação de entrada para todos os campos de cadastro.
-
-Nossa aplicação possui certas limitações que não conseguimos solucionar.
-Uma delas está na própria navegação entre páginas: Ao selecionar uma página de cadastro (Cliente, Produto ou venda) e tentar acessar uma outra página de cadastro, não é possível fazer de modo direto, é necessário ir a homepage primeiro para depois acessar outra página.
-
-Atualmente, só é possível cadastrar uma venda a um cliente existente e os pontos não são computados.
-
-Infelizmente não conseguimos desenvolver a API.
- 
-
-
-Tabelas para criação do banco
+tabelas
 
 CREATE TABLE [dbo].[Clientes] (
     [IdCliente] INT            IDENTITY (1, 1) NOT NULL,
