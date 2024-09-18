@@ -16,5 +16,6 @@ namespace Padaria03.Data
 
         public DbSet<Padaria03.Models.Produto> Produto { get; set; } = default!;
         public DbSet<Padaria03.Models.Cliente> Clientes { get; set; } = default!;
+        public DbSet<Padaria03.Models.Venda> Venda { get; set; } = default!;
     }
 }

@@ -1,0 +1,36 @@
+﻿@page
+@model Padaria03.Pages.VendaCRUD.IndexModel
+@{
+    ViewData["Title"] = "Listagem de Vendas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Adicionar nova venda</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Valor Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Venda)
+        {
+            <tr>
+                <td>@item.Cliente.Nome</td>
+                <td>@item.Produto.Nome</td>
+                <td>@item.ValorTotal</td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
