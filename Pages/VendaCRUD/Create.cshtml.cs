@@ -38,7 +38,7 @@ namespace Padaria03.Pages.VendaCRUD
             {
                 Clientes = new SelectList(await _context.Clientes.ToListAsync(), "IdCliente", "Nome");
                 Produtos = new SelectList(await _context.Produto.ToListAsync(), "IdProduto", "Nome");
-                return Page();
+                //return Page();
             }
 
             var produto = await _context.Produto.FindAsync(Venda.ProdutoId);
