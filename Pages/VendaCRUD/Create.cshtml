@@ -34,20 +34,26 @@
 
             async function atualizarValorTotal() {
                 const produtoId = produtoSelect.value;
-                const quantidade = quantidadeInput.value;
+                const quantidade = parseFloat(quantidadeInput.value) || 0;
 
                 if (produtoId && quantidade) {
                     try {
+                        // Buscar o valor do produto
                         const response = await fetch(`/api/produtos/${produtoId}`);
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok.');
+                        }
                         const produto = await response.json();
-                        const valorUnitario = produto.preco;
+                                const valorUnitario = produto.preco;
                         const valorTotal = quantidade * valorUnitario;
                         valorTotalInput.value = valorTotal.toFixed(2);
                     } catch (error) {
-                                console.error("Erro ao buscar dados do produto:", error);
+                            console.error("Erro ao buscar dados do produto:", error);
+                            }
+                        } else {
+                            valorTotalInput.value = '0.00';  // Reseta o valor total se não houver quantidade ou produto
+                        }
                     }
-                }
-            }
 
                     quantidadeInput.addEventListener('input', atualizarValorTotal);
                     produtoSelect.addEventListener('change', atualizarValorTotal);

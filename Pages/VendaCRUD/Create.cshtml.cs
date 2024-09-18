@@ -46,6 +46,13 @@ namespace Padaria03.Pages.VendaCRUD
             {
                 Venda.ValorTotal = Venda.Quantidade * produto.Preco;
             }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Produto não encontrado.");
+                Clientes = new SelectList(await _context.Clientes.ToListAsync(), "IdCliente", "Nome");
+                Produtos = new SelectList(await _context.Produto.ToListAsync(), "IdProduto", "Nome");
+                return Page();
+            }
 
             _context.Venda.Add(Venda);
             await _context.SaveChangesAsync();

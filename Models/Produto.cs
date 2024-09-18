@@ -7,11 +7,12 @@ namespace Padaria03.Models
     {
         [Key]
         public int IdProduto { get; set; }
-        //validação nome produto e preço
+
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
         [MaxLength(100)]
-        [Display(Name = "Nome" )]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
+
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
         [Column(TypeName = "decimal(18,2)")]
         [Display(Name = "Preço")]

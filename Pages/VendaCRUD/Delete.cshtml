@@ -1,4 +1,29 @@
 ﻿@page
 @model Padaria03.Pages.VendaCRUD.DeleteModel
-@{
-}
+
+<h2>Excluir Venda</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Venda.ClienteId" class="control-label"></label>
+        <input asp-for="Venda.ClienteId" class="form-control" readonly="readonly" />
+        <span asp-validation-for="Venda.ClienteId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Venda.ProdutoId" class="control-label"></label>
+        <input asp-for="Venda.ProdutoId" class="form-control" readonly="readonly" />
+        <span asp-validation-for="Venda.ProdutoId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Venda.Quantidade" class="control-label"></label>
+        <input asp-for="Venda.Quantidade" class="form-control" readonly="readonly" />
+        <span asp-validation-for="Venda.Quantidade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Venda.ValorTotal" class="control-label"></label>
+        <input asp-for="Venda.ValorTotal" class="form-control" readonly="readonly" />
+        <span asp-validation-for="Venda.ValorTotal" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Excluir" class="btn btn-danger" />
+    <a href="./Index" class="btn btn-secondary">Cancelar</a>
+</form>

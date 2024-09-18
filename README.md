@@ -19,3 +19,12 @@ CREATE TABLE [dbo].[Produto] (
     CONSTRAINT [PK_Produto] PRIMARY KEY CLUSTERED ([IdProduto] ASC)
 );
 
+CREATE TABLE [dbo].[Venda] (
+    [IdVenda]    INT             IDENTITY (1, 1) NOT NULL,
+    [IdCliente]  INT             NOT NULL,
+    [IdProduto]  INT             NOT NULL,
+    [ValorTotal] DECIMAL (18, 2) NOT NULL,
+    CONSTRAINT [PK_Venda] PRIMARY KEY CLUSTERED ([IdVenda] ASC),
+    CONSTRAINT [FK_Venda_Cliente] FOREIGN KEY ([IdCliente]) REFERENCES [dbo].[Clientes] ([IdCliente]),
+    CONSTRAINT [FK_Venda_Produto] FOREIGN KEY ([IdProduto]) REFERENCES [dbo].[Produto] ([IdProduto])
+);
